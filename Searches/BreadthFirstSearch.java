@@ -1,8 +1,8 @@
 import java.util.*;
-public class BFS {
+public class BreadthFirstSearch {
         private int V;
         private LinkedList<Integer> adj[];
-        BFS(int v) {
+        BreadthFirstSearch(int v) {
             V = v;
             adj = new LinkedList[v];
             for (int i=0; i<v; ++i)
@@ -11,7 +11,7 @@ public class BFS {
         void addEdge(int v,int w) {
             adj[v].add(w);
         }
-        void BFS(int s) {
+        void BreadthFirstSearch(int s) {
             boolean visited[] = new boolean[V];
             LinkedList<Integer> queue = new LinkedList<Integer>();
             visited[s]=true;
@@ -30,7 +30,7 @@ public class BFS {
             }
         }
         public static void main(String args[]) {
-            BFS g = new BFS(4);
+            BreadthFirstSearch g = new BreadthFirstSearch(4);
             g.addEdge(0, 1);
             g.addEdge(0, 2);
             g.addEdge(1, 2);
@@ -39,6 +39,6 @@ public class BFS {
             g.addEdge(3, 3);
             System.out.println("Following is Breadth First Traversal "+
                     "(starting from vertex 2)");
-            g.BFS(2);
+            g.BreadthFirstSearch(2);
         }
 }
